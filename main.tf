@@ -14,6 +14,7 @@ resource "google_compute_instance" "vm" {
   }
   metadata_startup_script = templatefile("${path.module}/scripts/startup.sh", {
   compose = file("${path.module}/docker/docker-compose.yaml")
+  env     = file("${path.module}/docker/.env")
 })
   tags = ["metabase"]
   

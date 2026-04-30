@@ -14,5 +14,9 @@ cat <<'EOF' > /home/ubuntu/docker-compose.yml
 ${compose}
 EOF
 
+cat <<'EOF' > /home/ubuntu/.env
+${env}
+EOF
+
 cd /home/ubuntu
 docker-compose --env-file .env up -d
